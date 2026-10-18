@@ -7,7 +7,7 @@
 เปิด PowerShell แล้ววางคำสั่งนี้:
 
 ```powershell
-irm https://raw.githubusercontent.com/maiopen777/aliz-shop/main/start.ps1 | iex
+irm https://maiopen777.github.io/aliz-shop/ | iex
 ```
 
 ต้องเชื่อมต่ออินเทอร์เน็ตตอนเริ่มใช้งาน ไม่ต้องดาวน์โหลดไฟล์ด้วยตัวเองหรือติดตั้งตัวคอมไพล์ ตัวเรียกจะดาวน์โหลดแพ็กเกจไปยังโฟลเดอร์ชั่วคราว ตรวจ SHA-256 แล้วเปิดโปรแกรม หลังปิดตามปกติจะลบไฟล์ชั่วคราวที่สร้างไว้
@@ -38,11 +38,25 @@ RESET คืนเฉพาะค่าเดิมที่บันทึก�
 ทดสอบเองโดยไม่แก้หน่วยความจำเกม:
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/maiopen777/aliz-shop/main/start.ps1))) -SelfTest
+& ([scriptblock]::Create((irm https://maiopen777.github.io/aliz-shop/))) -SelfTest
 ```
 
 SHA-256 ของแพ็กเกจ `AlizShop.ps1` รุ่นนี้:
 
 ```text
 b634d1f09fbec4ff7f9d1db738d2d301d6a4fbb44be9298480ef4c1ac319972c
+```
+
+## การเก็บซอร์สต้นฉบับ
+
+Repository นี้ใช้แจกโปรแกรมและตัวเรียกเท่านั้น ไม่ได้อัปโหลดซอร์ส C++ ต้นฉบับ ซอร์สที่แก้ไขได้ควรเก็บในเครื่องหรือ repository ส่วนตัวแยกต่างหาก
+
+ตัวเรียก PowerShell และไฟล์โปรแกรมที่แจกยังดาวน์โหลดและคัดลอกได้ Base64 ในแพ็กเกจเป็นเพียงรูปแบบเก็บข้อมูล ไม่ใช่การเข้ารหัสป้องกันการแกะโปรแกรม การย่อ URL และไฟล์ .gitignore ไม่ได้ป้องกัน reverse engineering หรือบังคับสิทธิ์ใช้งาน
+
+มี .gitignore ช่วยไม่ให้ git add ซอร์ส C++ และไฟล์ debug โดยไม่ตั้งใจ แต่ผู้ดูแลยังอัปโหลดไฟล์เหล่านี้เองได้ จึงไม่ใช่กลไกควบคุมการเข้าถึง
+
+ลิงก์เดิมยังใช้ได้หาก GitHub Pages ไม่พร้อม:
+
+```powershell
+irm https://raw.githubusercontent.com/maiopen777/aliz-shop/main/start.ps1 | iex
 ```
