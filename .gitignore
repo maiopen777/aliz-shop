@@ -1,0 +1,18 @@
+# Public distribution only. Keep native source and debug/build files private.
+# This helps avoid accidental git adds; it is not an access-control mechanism.
+src/
+source/
+*.cpp
+*.cc
+*.cxx
+*.h
+*.hpp
+*.pdb
+*.ilk
+*.obj
+*.o
+*.lib
+*.exp
+*.res
+*.ipch
+.vs/
