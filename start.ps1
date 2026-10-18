@@ -6,8 +6,8 @@ param([switch]$SelfTest)
 & {
     param([bool]$RunSelfTest)
     $ErrorActionPreference = 'Stop'
-    $programUrl = 'https://raw.githubusercontent.com/maiopen777/aliz-shop/49335084cba237aafff838a8d484e3ab666f9d67/AlizShop.ps1'
-    $programSha256 = 'b634d1f09fbec4ff7f9d1db738d2d301d6a4fbb44be9298480ef4c1ac319972c'
+    $programUrl = 'https://raw.githubusercontent.com/maiopen777/aliz-shop/367eba34293b7cba00471436c7cd261c669f2025/AlizShop.ps1'
+    $programSha256 = '4d6fa9b93fb4fe856926779bd327cad996a5f4291b88a3477771ac1f428da459'
     $downloadPath = Join-Path ([IO.Path]::GetTempPath()) ('AlizShop-launch-' + [Guid]::NewGuid().ToString('N') + '.ps1')
     $oldProtocol = [Net.ServicePointManager]::SecurityProtocol
     try {
